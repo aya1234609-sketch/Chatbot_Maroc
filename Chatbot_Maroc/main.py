@@ -21,16 +21,15 @@ def get_base64_image(image_path):
 img_base64 = get_base64_image("background.png")
 
 if img_base64:
-  bg_style = f"""
+    bg_style = f"""
     <style>
     .stApp {{
-        background-image: linear-gradient(rgba(15, 12, 41, 0.75), rgba(48, 43, 99, 0.75)), 
+        background-image: linear-gradient(rgba(15, 12, 41, 0.35), rgba(48, 43, 99, 0.35)), 
                     url("data:image/png;base64,{img_base64}");
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
         background-attachment: fixed;
-        background-color: #0f0c29;
     }}
     </style>
     """

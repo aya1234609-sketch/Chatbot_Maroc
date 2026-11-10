@@ -25,6 +25,7 @@ if img_base64:
         background-repeat: no-repeat !important;
         background-position: center !important;
         background-attachment: fixed !important;
+        overflow-y: auto !important;
     }}
     </style>
     """

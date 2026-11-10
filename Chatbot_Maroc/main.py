@@ -1,4 +1,5 @@
 import base64
+import os
 import streamlit as st
 
 # 1. Configuration de la page
@@ -18,18 +19,21 @@ def get_base64_image(image_path):
     return None
 
 
-img_base64 = get_base64_image("background.png")
+# تحديد المسار الصحيح للصورة داخل المجلد الفرعي
+image_path = os.path.join(os.path.dirname(__file__), "background.png")
+img_base64 = get_base64_image(image_path)
 
 if img_base64:
-    bg_style = f"""
+  bg_style = f"""
     <style>
     .stApp {{
         background-image: linear-gradient(rgba(15, 12, 41, 0.35), rgba(48, 43, 99, 0.35)), 
-                    url("data:image/png;base64,{img_base64}");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-attachment: fixed;
+                    url("data:image/png;base64,{img_base64}") !important;
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+        background-position: center !important;
+        background-attachment: fixed !important;
+        overflow-y: auto !important;
     }}
     </style>
     """
@@ -362,9 +366,7 @@ if submitted:
       " souveraineté"
   ):
     score += 1
-  if (
-      q6 == "Sérieuse, crédible et base de compromis pour une solution"
-  ):
+  if q6 == "Sérieuse, crédible et base de compromis pour une solution":
     score += 1
   if (
       q7

@@ -12,7 +12,9 @@ def get_base64_image(image_path):
     except FileNotFoundError:
         return None
 
-img_base64 = get_base64_image("background.png")
+import os
+image_path = os.path.join(os.path.dirname(__file__), "background.png")
+img_base64 = get_base64_image(image_path)
 
 if img_base64:
     bg_style = f"""

@@ -24,8 +24,7 @@ if img_base64:
     bg_style = f"""
     <style>
     .stApp {{
-        background-image: linear-gradient(rgba(15, 12, 41, 0.35), rgba(48, 43, 99, 0.35)), 
-                    url("data:image/png;base64,{img_base64}");
+        background: linear-gradient(rgba(15, 12, 41, 0.35), rgba(48, 43, 99, 0.35)), url("data:image/png;base64,{img_base64}");
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
